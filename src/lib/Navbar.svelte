@@ -1,21 +1,21 @@
-<nav class="bg-white border-gray-200">
+<nav class="bg-gradient-to-r from-violet-500 to-fuchsia-500">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img
-        src="https://tsoc.dev/TSoC_Favicon.svg"
-        class="h-8"
-        alt="TSoC Logo"
+        src="https://img.icons8.com/?size=100&id=24260&format=png&color=000000"
+        class="h-14"
+        alt="Logo"
       />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap hidden w-full md:block md:w-auto bg-blue-400 p-2 px-5 rounded-full bg-opacity-50"
-        >TSoC Fullstack App by Nilay Patel  </span
+      <span class="self-center text-2xl font-semibold whitespace-nowrap hidden w-full md:block md:w-auto bg-white p-2 px-5 rounded-full"
+        > Property Mortgage Management System 🏢 🏦 🏫 </span
       >
     </a>
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center  font text-sm text-black font-extrabold rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
       aria-controls="navbar-default"
       aria-expanded="false"
     >
@@ -37,45 +37,45 @@
       </svg>
     </button>
     <div
-      class="hidden w-full md:block md:w-auto bg-blue-400 p-3 px-5 rounded-full bg-opacity-50"
+      class="hidden w-full md:block md:w-auto bg-white p-3 px-5 rounded-full "
       id="navbar-default"
     >
       <ul
-        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-blue-400 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-white rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
       >
         <li>
           <a
             href="/"
-            class="block py-2 px-3 text-grey-400 rounded md:bg-transparent md:text-blue-700 md:p-0"
-            aria-current="page">Home</a
+            class="block py-2 px-3 text-grey-400 font-extrabold rounded md:bg-transparent md:text-black md:p-0 hover:bg-white md:hover:text-blue-400"
+            aria-current="page">Home </a
           >
         </li>
         <li>
           <a
             href="/profiles"
-            class="block py-2 px-3 text-grey-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-            >Profiles</a
+            class="block py-2 px-3 text-grey-400 font-extrabold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+            >Login</a
           >
         </li>
         <li>
           <a
             href="/raw-wallet"
-            class="block py-2 px-3 text-grey-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-            >Raw Wallet</a
+            class="block py-2 px-3 text-grey-400 rounded font-extrabold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+            >Register</a
           >
         </li>
         <li>
           <a
             href="/cloud-wallet"
-            class="block py-2 px-3 text-grey-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-            >Cloud Wallet</a
+            class="block py-2 px-3 text-grey-400 rounded font-extrabold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+            >Dashboard</a
           >
         </li>
         <li>
           <a
-            href="/bounty"
-            class="block py-2 px-3 text-grey-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-            >Bounty</a
+            href="/logout"
+            class="block py-2 px-3 text-grey-400 rounded font-extrabold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+            >Log Out</a
           >
         </li>
       </ul>
