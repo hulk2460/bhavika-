@@ -4,7 +4,7 @@
   >
     <a href="/" class="flex items-center space-x-3 ">
       <img
-        src="https://img.icons8.com/?size=100&id=24260&format=png&color=000000"
+        src="https://img.icons8.com/?size=100&id=i0lL2QryIjiE&format=png&color=000000"
         class="h-14"
         alt="Logo"
       />
@@ -69,7 +69,8 @@
         </li>
         <li>
           <a
-            href="/dashboard"
+            href="/dashboard,"
+            
             class="block py-2 px-3 text-grey-400 rounded font-extrabold md:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
             >Dashboard</a
           >
