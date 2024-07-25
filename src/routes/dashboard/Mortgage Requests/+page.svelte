@@ -16,7 +16,7 @@
 >
   <form method="POST" action="?/create">
     <div class="flex flex-wrap -mx-1 mb-0">
-      <div class="w-full md:w-4/3 px-3/6 content-center  mb-6 md:mb-3">
+      <div class="w-full md:w-4/3 px-3/6  mb-6 md:mb-3">
         <label
           class="block uppercase tracking-wide font-extrabold text-black text-xl mb-3"
           for="grid-city"
@@ -33,10 +33,10 @@
         />
       </div>
       
-      <div class="flex flex-wrap content-center mb-0 bg-gradient-to-r mt-2 pt-2 w-full max-w-xl p-4 mx-auto rounded-md shadow-sm">
+      <div class="flex flex-wrap mb-0 bg-gradient-to-r mt-2 pt-2 w-full max-w-xl p-4 mx-auto rounded-md shadow-sm">
         <div class="w-full md:w-4/3 px-3/6  mb-6 md:mb-3">
         <label
-          class="block content-center uppercase tracking-wide font-extrabold text-black text-xl mb-3"
+          class="block uppercase tracking-wide font-extrabold text-black text-xl mb-3"
           for="grid-city"
         >
           Password
@@ -53,7 +53,7 @@
       
       <button
         type="submit"
-        class="bg-violet-800 w-1/4 content-center flex-shrink hover:bg-blue-400 text-white text-balance font-bold mt-5 ml-6 px-2 rounded"
+        class="bg-violet-800 w-1/4 flex-shrink hover:bg-blue-400 text-white text-balance font-bold mt-5 ml-6 px-2 rounded"
       >
         Login
       </button>
