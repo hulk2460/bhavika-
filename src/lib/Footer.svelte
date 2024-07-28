@@ -1,12 +1,13 @@
 <footer
-  class="fixed bottom-0 left-0 z-20 w-full p-4 bg-gradient-to-r from-purple-500 to-pink-500 shadow md:flex md:items-center md:justify-between md:p-6"
+  class="fixed bottom-0 left-0 z-20 w-full p-4 bg-lime-500  md:flex md:items-center md:justify-between md:p-6"
 >
 <span class=" font-bold text-2xl text-black sm:text-center">
   <a href="https://tsoc.dev" class="hover:underline" >
-      TSoC 🏢  
+      TSoC   
   </a>
-   All Rights Reserved by Team Y 🙋🏻🤝 © 2024
-  <a></a>
+  <!-- svelte-ignore a11y-missing-attribute -->
+  <a> All Rights Reserved by Team B1 © 2024
+  </a>
 </span>
 
 

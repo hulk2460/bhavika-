@@ -1,68 +1,72 @@
 <script lang="ts">
-  import Table from "$lib/Table.svelte";
+  let username = 'John Doe';
+  let email = 'johndoe@example.com';
+  let password = '';
+  let newPassword = '';
+  let confirmPassword = '';
 
-  /** @type {import('./$types').PageData} */
-  export let data;
-  console.log("hello", data.names);
+  function updateProfile() {
+    // Implement profile update logic here
+    alert('Profile updated!');
+  }
 
-  /** @type {import('./$types').ActionData} */
-  export let form;
+  function updatePassword() {
+    // Implement password update logic here
+    if (newPassword === confirmPassword) {
+      alert('Password updated!');
+    } else {
+      alert('Passwords do not match!');
+    }
+  }
 </script>
 
-<Table names={data.names} />
-
-<div
-  class="mt-4 pt-4 w-full max-w-xl p-4 mx-auto rounded-lg shadow-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 ring-1 ring-black backdrop-blur-lg"
->
-  <form method="POST" action="?/create">
-    <div class="flex flex-wrap -mx-1 mb-0">
-      <div class="w-full md:w-4/3 px-3/6 content-center  mb-6 md:mb-3">
-        <label
-          class="block uppercase tracking-wide font-extrabold text-black text-xl mb-3"
-          for="grid-city"
-        >
-          E-mail
-        </label>
-        <input
-          class="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-8 leading-tight focus:outline-none focus:bg-white focus:border-black"
-          id="name"
-          type="text"
-          placeholder="Enter E-mail Address "
-          name="name"
-          required
-        />
+<div class="max-w-4xl mx-auto p-6 bg-white shadow rounded-lg">
+  <h2 class="text-2xl font-bold mb-6">Account Settings</h2>
+  
+  <!-- Profile Section -->
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-4">Profile Information</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" bind:value={username} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
       </div>
-      
-      <div class="flex flex-wrap content-center mb-0 bg-gradient-to-r mt-2 pt-2 w-full max-w-xl p-4 mx-auto rounded-md shadow-sm">
-        <div class="w-full md:w-4/3 px-3/6  mb-6 md:mb-3">
-        <label
-          class="block content-center uppercase tracking-wide font-extrabold text-black text-xl mb-3"
-          for="grid-city"
-        >
-          Password
-        </label>
-        <input
-          class="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-8 leading-tight focus:outline-none focus:bg-white focus:border-black"
-          id="email"
-          type="text"
-          placeholder="Enter Password"
-          name="email"
-          required
-        />
+      <div>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" bind:value={email} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
       </div>
-      
-      <button
-        type="submit"
-        class="bg-violet-800 w-1/4 content-center flex-shrink hover:bg-blue-400 text-white text-balance font-bold mt-5 ml-6 px-2 rounded"
-      >
-        Login
-      </button>
     </div>
-  </form>
-  {#if form?.success}
-    <!-- this message is ephemeral; it exists because the page was rendered in
-		   response to a form submission. it will vanish if the user reloads -->
-    <p class="pt-2">Login successful !!! 🥳  </p>
-  {/if}
+    <button on:click={updateProfile} class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Update Profile</button>
+  </div>
+  
+  <!-- Password Section -->
+  <div>
+    <h3 class="text-xl font-semibold mb-4">Change Password</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="block text-sm font-medium text-gray-700">Current Password</label>
+        <input type="password" bind:value={password} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+      </div>
+      <div>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="block text-sm font-medium text-gray-700">New Password</label>
+        <input type="password" bind:value={newPassword} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+      </div>
+      <div>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="block text-sm font-medium text-gray-700">Confirm New Password</label>
+        <input type="password" bind:value={confirmPassword} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+      </div>
+    </div>
+    <button on:click={updatePassword} class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Update Password</button>
+  </div>
 </div>
-<div class="h-32"></div>
+
+<style>
+  .cursor-pointer:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style>

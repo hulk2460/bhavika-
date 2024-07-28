@@ -1,59 +1,94 @@
-<script lang="ts">
-  import Table from "$lib/Table.svelte";
 
-  /** @type {import('./$types').PageData} */
-  export let data;
-  console.log("hello", data.names);
+<script>
+  let email = '';
+  let password = '';
+  let confirmPassword = '';
 
-  /** @type {import('./$types').ActionData} */
-  export let form;
+  const handleSubmit = () => {
+    if (password === confirmPassword) {
+      // Call your registration API here
+      console.log('Registering with:', { email, password });
+    } else {
+      alert('Passwords do not match');
+    }
+  };
 </script>
 
-<div
-class="mt-6 pt-6 w-full max-w-screen-xl p-4 mx-auto rounded-2xl shadow-xl font-bold bg-gradient-to-r dark:bg-slate-200 ring-1 ring-black backdrop-blur-lg flex justify-center items-center"
->
-  <form method="POST" action="?/create">
-    <label for="website-admin" class="block mb-2 text-xl justify-items-center  text-gray-900 dark:text-black">Username Or E-mail</label>
-    <div class="max-w-screen-xl">
-      <span class="inline-flex items-center max-w-screen px-7 text-sm  text-gray-900 bg-gray-200 border border-e-0 border-gray-300 md:rounded-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-      
-        
-        <input
-          class="rounded-mdfont-serif max-xl:rounded-e-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          id="name"
-          type="text"
-          placeholder="Enter E-mail Address "
-          name="name"
-          required
-        />
-      </div>
-      
-      <div class="flex flex-wrap content-center mb-0 max-w-screen-xl  bg-gradient-to-r mt-2 pt-2 w-full p-4 mx-auto rounded-md shadow-sm">
-        <div class="max-w-screen-xl">
-          <label for="website-admin" class="block mb-2 text-xl justify-items-center  text-gray-900 dark:text-black">Password</label>
-          <span class="inline-flex items-center max-w-screen-md px-7 text-sm md:rounded-md text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-          <input
-          class="md:rounded-md font-serif max-xl:rounded-e-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          id="email"
-          type="text"
-          placeholder="Enter Password"
-          name="email"
-          required
-        />
-      </div>
-      
-      <button
-        type="submit"
-        class="bg-violet-800 w-full md:rounded-md ms:xl font-sherif content-center flex-shrink hover:bg-blue-400 text-white text-balance font-bold mt-5 ml-6 px-2 rounded"
-      >
-        Login
-      </button>
-    </div>
-  </form>
-  {#if form?.success}
-    <!-- this message is ephemeral; it exists because the page was rendered in
-		   response to a form submission. it will vanish if the user reloads -->
-    <p class="pt-2">Login successful !!! 🥳  </p>
-  {/if}
+<style>
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .header {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+  }
+  .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="container">
+  <div class="header">Create Your Account</div>
+  <div class="form-group">
+    <label for="email">Enter your Email</label>
+    <input type="email" id="email" bind:value={email} placeholder="Enter your email" required />
+  </div>
+  <div class="form-group">
+    <label for="password">Create a Password</label>
+    <input type="password" id="password" bind:value={password} placeholder="Create your password" required />
+  </div>
+  <div class="form-group">
+    <label for="confirm-password">Confirm your Password</label>
+    <input type="password" id="confirm-password" bind:value={confirmPassword} placeholder="Confirm your password" required />
+  </div>
+  <button class="submit-button" on:click={handleSubmit}>Register</button>
+  <div class="footer">
+    <p>Already have an account? <a href="/profiles">Login here</a></p>
+  </div>
 </div>
-<div class="h-32"></div>
+
