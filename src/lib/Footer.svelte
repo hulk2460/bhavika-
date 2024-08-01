@@ -5,8 +5,7 @@
   <a href="https://tsoc.dev" class="hover:underline" >
       TSoC   
   </a>
-  <!-- svelte-ignore a11y-missing-attribute -->
-  <a> All Rights Reserved by Team B1 © 2024
+  <a> All Rights Reserved by Bhavika © 2024
   </a>
 </span>
 
